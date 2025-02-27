@@ -154,6 +154,8 @@ export const paramDef = {
 				flipH: { type: 'boolean', nullable: true },
 				offsetX: { type: 'number', nullable: true, maximum: 0.25, minimum: -0.25 },
 				offsetY: { type: 'number', nullable: true, maximum: 0.25, minimum: -0.25 },
+				scale: { type: 'number', nullable: true, maximum: 1, minimum: 0.25 },
+				opacity: { type: 'number', nullable: true, maximum: 1, minimum: 0.25 },
 			},
 			required: ['id'],
 		} },
@@ -404,6 +406,8 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 					flipH: d.flipH ?? false,
 					offsetX: d.offsetX ?? 0,
 					offsetY: d.offsetY ?? 0,
+					scale: d.scale ?? 1,
+					opacity: d.opacity ?? 1,
 				}));
 			}
 

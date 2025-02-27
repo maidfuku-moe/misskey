@@ -5027,6 +5027,14 @@ export interface Locale extends ILocale {
      */
     "flip": string;
     /**
+     * スケール
+     */
+    "scale": string;
+    /**
+     * 透明度
+     */
+    "opacity": string;
+    /**
      * アイコンのデコレーションを表示
      */
     "showAvatarDecorations": string;

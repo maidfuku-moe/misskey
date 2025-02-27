@@ -29,6 +29,12 @@ SPDX-License-Identifier: AGPL-3.0-only
 				<MkRange v-model="offsetY" continuousUpdate :min="-0.25" :max="0.25" :step="0.025" :textConverter="(v) => `${Math.floor(v * 100)}%`">
 					<template #label>Y {{ i18n.ts.position }}</template>
 				</MkRange>
+				<MkRange v-model="scale" continuousUpdate :min="0.25" :max="1" :step="0.025" :textConverter="(v) => `${Math.floor(v * 100)}%`">
+					<template #label>{{ i18n.ts.scale }}</template>
+				</MkRange>
+				<MkRange v-model="opacity" continuousUpdate :min="0.25" :max="1" :step="0.025" :textConverter="(v) => `${Math.floor(v * 100)}%`">
+					<template #label>{{ i18n.ts.opacity }}</template>
+				</MkRange>
 				<MkSwitch v-model="flipH">
 					<template #label>{{ i18n.ts.flip }}</template>
 				</MkSwitch>
@@ -72,12 +78,16 @@ const emit = defineEmits<{
 		flipH: boolean;
 		offsetX: number;
 		offsetY: number;
+		scale: number;
+		opacity: number;
 	}): void;
 	(ev: 'update', payload: {
 		angle: number;
 		flipH: boolean;
 		offsetX: number;
 		offsetY: number;
+		scale: number;
+		opacity: number;
 	}): void;
 	(ev: 'detach'): void;
 }>();
@@ -89,6 +99,8 @@ const angle = ref((props.usingIndex != null ? $i.avatarDecorations[props.usingIn
 const flipH = ref((props.usingIndex != null ? $i.avatarDecorations[props.usingIndex].flipH : null) ?? false);
 const offsetX = ref((props.usingIndex != null ? $i.avatarDecorations[props.usingIndex].offsetX : null) ?? 0);
 const offsetY = ref((props.usingIndex != null ? $i.avatarDecorations[props.usingIndex].offsetY : null) ?? 0);
+const scale = ref((props.usingIndex != null ? $i.avatarDecorations[props.usingIndex].scale : null) ?? 1);
+const opacity = ref((props.usingIndex != null ? $i.avatarDecorations[props.usingIndex].opacity : null) ?? 1);
 
 const decorationsForPreview = computed(() => {
 	const decoration = {
@@ -98,6 +110,8 @@ const decorationsForPreview = computed(() => {
 		flipH: flipH.value,
 		offsetX: offsetX.value,
 		offsetY: offsetY.value,
+		scale: scale.value,
+		opacity: opacity.value,
 		blink: true,
 	};
 	const decorations = [...$i.avatarDecorations];
@@ -119,6 +133,8 @@ async function update() {
 		flipH: flipH.value,
 		offsetX: offsetX.value,
 		offsetY: offsetY.value,
+		scale: scale.value,
+		opacity: opacity.value,
 	});
 	dialog.value?.close();
 }
@@ -129,6 +145,8 @@ async function attach() {
 		flipH: flipH.value,
 		offsetX: offsetX.value,
 		offsetY: offsetY.value,
+		scale: scale.value,
+		opacity: opacity.value,
 	});
 	dialog.value?.close();
 }

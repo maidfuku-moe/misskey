@@ -109,6 +109,14 @@ export const packedUserLiteSchema = {
 						type: 'number',
 						nullable: false, optional: true,
 					},
+					scale: {
+						type: 'number',
+						nullable: false, optional: true,
+					},
+					opacity: {
+						type: 'number',
+						nullable: false, optional: true,
+					}
 				},
 			},
 		},

@@ -199,6 +199,8 @@ export class AvatarDecorationService implements OnApplicationShutdown {
 				flipH: userAvatarDecoration.flipH ?? false,
 				offsetX: userAvatarDecoration.offsetX ?? 0,
 				offsetY: userAvatarDecoration.offsetY ?? 0,
+				scale: userAvatarDecoration.scale ?? 1,
+				opacity: userAvatarDecoration.opacity ?? 1,
 			});
 		}
 		await this.usersRepository.update({ id: user.id }, updates);

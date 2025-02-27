@@ -195,6 +195,8 @@ function toPackedUserLite(user: MiUser, override?: Packed<'UserLite'>): Packed<'
 			url: 'https://example.com/dummy-image001.png',
 			offsetX: it.offsetX,
 			offsetY: it.offsetY,
+			scale: it.scale,
+			opacity: it.opacity,
 		})),
 		isBot: user.isBot,
 		isCat: user.isCat,
