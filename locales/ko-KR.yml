@@ -3344,3 +3344,17 @@ _qr:
   scanFile: "단말기의 이미지 스캔"
   raw: "텍스트"
   mfm: "MFM"
+
+_story:
+  create: "스토리 만들기"
+  addMedia: "미디어 추가"
+  post: "공유"
+  textPlaceholder: "텍스트 추가..."
+  fontSize: "크기"
+  textColor: "색상"
+  addText: "추가"
+  replyPlaceholder: "답장..."
+  expired: "만료됨"
+  viewers: "내 스토리를 확인한 사람"
+  noViewers: "아직 본 사람이 없습니다"
+  messageSent: "전송되었습니다"

@@ -49,6 +49,7 @@ import { QueueLoggerService } from './QueueLoggerService.js';
 import { QUEUE, baseWorkerOptions } from './const.js';
 import { CleanExpiredRemoteFilesProcessorService } from './processors/CleanExpiredRemoteFilesProcessorService.js';
 import { ReDownloadRemoteFileProcessorService } from './processors/ReDownloadRemoteFileProcessorService.js';
+import { CleanupExpiredStoriesProcessorService } from './processors/CleanupExpiredStoriesProcessorService.js';
 
 // ref. https://github.com/misskey-dev/misskey/pull/7635#issue-971097019
 function httpRelatedBackoff(attemptsMade: number) {
@@ -132,6 +133,7 @@ export class QueueProcessorService implements OnApplicationShutdown {
 		private cleanExpiredRemoteFilesProcessorService: CleanExpiredRemoteFilesProcessorService,
 		private reDownloadRemoteFileProcessorService: ReDownloadRemoteFileProcessorService,
 		private cleanRemoteNotesProcessorService: CleanRemoteNotesProcessorService,
+		private cleanupExpiredStoriesProcessorService: CleanupExpiredStoriesProcessorService,
 	) {
 		this.logger = this.queueLoggerService.logger;
 
@@ -174,6 +176,7 @@ export class QueueProcessorService implements OnApplicationShutdown {
 					case 'checkModeratorsActivity': return this.checkModeratorsActivityProcessorService.process();
 					case 'clean': return this.cleanProcessorService.process();
 					case 'cleanRemoteNotes': return this.cleanRemoteNotesProcessorService.process(job);
+					case 'cleanupExpiredStories': return this.cleanupExpiredStoriesProcessorService.process();
 					default: throw new Error(`unrecognized job type ${job.name} for system`);
 				}
 			};

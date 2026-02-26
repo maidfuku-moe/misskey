@@ -45,6 +45,7 @@ import { ExportFavoritesProcessorService } from './processors/ExportFavoritesPro
 import { RelationshipProcessorService } from './processors/RelationshipProcessorService.js';
 import { CleanExpiredRemoteFilesProcessorService } from './processors/CleanExpiredRemoteFilesProcessorService.js';
 import { ReDownloadRemoteFileProcessorService } from './processors/ReDownloadRemoteFileProcessorService.js';
+import { CleanupExpiredStoriesProcessorService } from './processors/CleanupExpiredStoriesProcessorService.js';
 
 @Module({
 	imports: [
@@ -92,6 +93,7 @@ import { ReDownloadRemoteFileProcessorService } from './processors/ReDownloadRem
 		QueueProcessorService,
 		CleanExpiredRemoteFilesProcessorService,
 		ReDownloadRemoteFileProcessorService,
+		CleanupExpiredStoriesProcessorService,
 	],
 	exports: [
 		QueueProcessorService,

@@ -12904,6 +12904,56 @@ export interface Locale extends ILocale {
          */
         "mfm": string;
     };
+    "_story": {
+        /**
+         * ストーリーを作成
+         */
+        "create": string;
+        /**
+         * メディアを追加
+         */
+        "addMedia": string;
+        /**
+         * シェア
+         */
+        "post": string;
+        /**
+         * テキストを追加...
+         */
+        "textPlaceholder": string;
+        /**
+         * サイズ
+         */
+        "fontSize": string;
+        /**
+         * 色
+         */
+        "textColor": string;
+        /**
+         * 追加
+         */
+        "addText": string;
+        /**
+         * 返信...
+         */
+        "replyPlaceholder": string;
+        /**
+         * 期限切れ
+         */
+        "expired": string;
+        /**
+         * 私のストーリーを見た人
+         */
+        "viewers": string;
+        /**
+         * まだ閲覧者はいません
+         */
+        "noViewers": string;
+        /**
+         * 送信しました
+         */
+        "messageSent": string;
+    };
 }
 declare const locales: {
     [lang: string]: Locale;

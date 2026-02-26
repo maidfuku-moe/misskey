@@ -1,6 +1,7 @@
 import { ModerationLogPayloads } from './consts.js';
 import {
 	Announcement,
+	DriveFile,
 	EmojiDetailed,
 	MeDetailed,
 	Note,
@@ -9,6 +10,7 @@ import {
 	RolePolicies,
 	User,
 	UserDetailedNotMe,
+	UserLite,
 } from './autogen/models.js';
 import type { AuthenticationResponseJSON, PublicKeyCredentialRequestOptionsJSON } from '@simplewebauthn/types';
 
@@ -245,6 +247,18 @@ export type QueueStats = {
 };
 
 export type QueueStatsLog = QueueStats[];
+
+export type Story = {
+	id: string;
+	createdAt: string;
+	expiresAt: string;
+	userId: string;
+	user: UserLite;
+	text: string | null;
+	layer: Record<string, unknown> | null;
+	viewCount: number;
+	isViewed?: boolean;
+};
 
 export type EmojiAdded = {
 	emoji: EmojiDetailed

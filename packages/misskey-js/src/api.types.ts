@@ -18,6 +18,7 @@ import {
 	SignupPendingResponse,
 	SignupRequest,
 	SignupResponse,
+	Story,
 } from './entities.js';
 
 type Overwrite<T, U extends { [Key in keyof T]?: unknown }> = Omit<
@@ -118,4 +119,36 @@ export type Endpoints = Overwrite<
 			res: EmptyResponse;
 		},
 	}
->;
+> & {
+	'stories/create': {
+		req: {
+			text?: string | null;
+			layer?: Record<string, unknown> | null;
+		};
+		res: Story;
+	};
+	'stories/delete': {
+		req: { storyId: string };
+		res: undefined;
+	};
+	'stories/update': {
+		req: {
+			storyId: string;
+			text?: string | null;
+			layer?: Record<string, unknown> | null;
+		};
+		res: undefined;
+	};
+	'stories/list': {
+		req: EmptyRequest;
+		res: Story[];
+	};
+	'stories/view': {
+		req: { storyId: string };
+		res: undefined;
+	};
+	'stories/viewers': {
+		req: { storyId: string };
+		res: { userId: string; user: UserDetailed; viewedAt: string }[];
+	};
+};

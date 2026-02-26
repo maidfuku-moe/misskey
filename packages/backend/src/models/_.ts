@@ -93,6 +93,8 @@ import { MiUserPublickey } from '@/models/UserPublickey.js';
 import { MiUserSecurityKey } from '@/models/UserSecurityKey.js';
 import { MiWebhook } from '@/models/Webhook.js';
 import { NoteHistory } from './NoteHistory.js';
+import { MiStory } from '@/models/Story.js';
+import { MiStoryView } from '@/models/StoryView.js';
 import type { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity.js';
 
 export interface MiRepository<T extends ObjectLiteral> {
@@ -235,6 +237,8 @@ export {
 	MiChatApproval,
 	MiBubbleGameRecord,
 	MiReversiGame,
+	MiStory,
+	MiStoryView,
 };
 
 export type AbuseUserReportsRepository = Repository<MiAbuseUserReport> & MiRepository<MiAbuseUserReport>;
@@ -315,4 +319,6 @@ export type ChatApprovalsRepository = Repository<MiChatApproval> & MiRepository<
 export type BubbleGameRecordsRepository = Repository<MiBubbleGameRecord> & MiRepository<MiBubbleGameRecord>;
 export type ReversiGamesRepository = Repository<MiReversiGame> & MiRepository<MiReversiGame>;
 export type NoteHistoryRepository = Repository<NoteHistory> & MiRepository<NoteHistory>;
+export type StoriesRepository = Repository<MiStory> & MiRepository<MiStory>;
+export type StoryViewsRepository = Repository<MiStoryView> & MiRepository<MiStoryView>;
 

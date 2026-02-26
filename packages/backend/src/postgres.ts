@@ -88,6 +88,8 @@ import { MiReversiGame } from '@/models/ReversiGame.js';
 import { MiChatApproval } from '@/models/ChatApproval.js';
 import { NoteHistory } from './models/NoteHistory.js';
 import { MiSystemAccount } from '@/models/SystemAccount.js';
+import { MiStory } from '@/models/Story.js';
+import { MiStoryView } from '@/models/StoryView.js';
 
 pg.types.setTypeParser(20, Number);
 
@@ -261,6 +263,8 @@ export const entities = [
 	MiBubbleGameRecord,
 	MiReversiGame,
 	NoteHistory,
+	MiStory,
+	MiStoryView,
 	...charts,
 ];
 

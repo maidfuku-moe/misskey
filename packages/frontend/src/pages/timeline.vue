@@ -10,6 +10,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 			{{ i18n.ts._timelineDescription[src] }}
 		</MkTip>
 		<MkPostForm v-if="prefer.r.showFixedPostForm.value" :class="$style.postForm" class="_panel" fixed style="margin-bottom: var(--MI-margin);"/>
+		<MkStoryBar v-if="$i" :class="$style.storyBar" style="margin-bottom: var(--MI-margin);"/>
 		<MkStreamingNotesTimeline
 			ref="tlComponent"
 			:key="src + withRenotes + withReplies + onlyFiles + withSensitive"
@@ -33,6 +34,7 @@ import type { MenuItem } from '@/types/menu.js';
 import type { BasicTimelineType } from '@/timelines.js';
 import MkStreamingNotesTimeline from '@/components/MkStreamingNotesTimeline.vue';
 import MkPostForm from '@/components/MkPostForm.vue';
+import MkStoryBar from '@/components/MkStoryBar.vue';
 import * as os from '@/os.js';
 import { store } from '@/store.js';
 import { i18n } from '@/i18n.js';
@@ -325,6 +327,12 @@ definePage(() => ({
 
 .postForm {
 	border-radius: var(--MI-radius);
+}
+
+.storyBar {
+	background: var(--MI_THEME-panel);
+	border-radius: var(--MI-radius);
+	overflow: hidden;
 }
 
 .tl {

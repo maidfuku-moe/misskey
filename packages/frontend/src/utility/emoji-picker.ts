@@ -63,6 +63,10 @@ class EmojiPicker {
 		this.onChosen = onChosen;
 		this.onClosed = onClosed;
 	}
+
+	public close() {
+		this.manualShowing.value = false;
+	}
 }
 
 export const emojiPicker = new EmojiPicker();

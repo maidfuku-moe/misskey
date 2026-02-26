@@ -442,3 +442,9 @@ export * as 'chat/rooms/invitations/outbox' from './endpoints/chat/rooms/invitat
 export * as 'chat/history' from './endpoints/chat/history.js';
 export * as 'chat/read-all' from './endpoints/chat/read-all.js';
 export * as 'v2/admin/emoji/list' from './endpoints/v2/admin/emoji/list.js';
+export * as 'stories/create' from './endpoints/stories/create.js';
+export * as 'stories/delete' from './endpoints/stories/delete.js';
+export * as 'stories/update' from './endpoints/stories/update.js';
+export * as 'stories/list' from './endpoints/stories/list.js';
+export * as 'stories/view' from './endpoints/stories/view.js';
+export * as 'stories/viewers' from './endpoints/stories/viewers.js';

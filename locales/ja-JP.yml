@@ -3452,3 +3452,17 @@ _qr:
   scanFile: "端末の画像をスキャン"
   raw: "テキスト"
   mfm: "MFM"
+
+_story:
+  create: "ストーリーを作成"
+  addMedia: "メディアを追加"
+  post: "シェア"
+  textPlaceholder: "テキストを追加..."
+  fontSize: "サイズ"
+  textColor: "色"
+  addText: "追加"
+  replyPlaceholder: "返信..."
+  expired: "期限切れ"
+  viewers: "私のストーリーを見た人"
+  noViewers: "まだ閲覧者はいません"
+  messageSent: "送信しました"

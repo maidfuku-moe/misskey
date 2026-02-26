@@ -94,6 +94,7 @@ export interface MainEventTypes {
 	announcementCreated: {
 		announcement: Packed<'Announcement'>;
 	};
+	storyCreated: Packed<'Story'>;
 }
 
 export interface DriveEventTypes {

@@ -21,6 +21,7 @@ import {
 	QueueStatsLog,
 	ServerStats,
 	ServerStatsLog,
+	Story,
 	ReversiGameDetailed,
 } from './entities.js';
 import {
@@ -64,6 +65,7 @@ export type Channels = {
 			readAntenna: (payload: Antenna) => void;
 			receiveFollowRequest: (payload: User) => void;
 			announcementCreated: (payload: AnnouncementCreated) => void;
+			storyCreated: (payload: Story) => void;
 		};
 		receives: null;
 	};

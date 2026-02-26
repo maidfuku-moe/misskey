@@ -3324,3 +3324,17 @@ _qr:
   scanFile: "Scan image from device"
   raw: "Text"
   mfm: "MFM"
+
+_story:
+  create: "New Story"
+  addMedia: "Add Media"
+  post: "Share"
+  textPlaceholder: "Add text..."
+  fontSize: "Size"
+  textColor: "Color"
+  addText: "Add"
+  replyPlaceholder: "Reply..."
+  expired: "Expired"
+  viewers: "People who viewed my story"
+  noViewers: "No viewers yet"
+  messageSent: "Sent"
